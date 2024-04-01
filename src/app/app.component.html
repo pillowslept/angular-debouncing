@@ -1,0 +1,11 @@
+<main class="main">
+  <div class="content">
+    <input [ngClass]="isLoading ? 'is-loading' : ''" type="text" placeholder="Start typing" (keyup)="onSearch($event.target)">
+    <span *ngIf="isLoading" class="loader">Loading info...</span>
+    <div *ngIf="results.length" class="list-items">
+      <div *ngFor="let option of results" class="item">{{ option }}</div>
+    </div>
+  </div>
+</main>
+
+<router-outlet />
